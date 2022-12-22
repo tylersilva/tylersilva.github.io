@@ -341,13 +341,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-an-api-call">
-   Make an API call
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#store-the-response-data-in-json">
-   Store the response data in JSON
+  <a class="reference internal nav-link" href="#store-the-api-response-data-in-json">
+   Store the API response data in JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -356,13 +351,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pull-additional-details-about-the-repositories-and-store-in-a-variable">
-   Pull additional details about the repositories and store in a variable
+  <a class="reference internal nav-link" href="#capture-additional-details-about-the-repositories">
+   Capture additional details about the repositories
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-the-data-in-the-top-repository">
-   Examine the data in the top repository
+  <a class="reference internal nav-link" href="#examine-the-data-in-the-top-stars-repository">
+   Examine the data in the top (stars) repository
   </a>
  </li>
 </ul>
@@ -385,13 +380,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-an-api-call">
-   Make an API call
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#store-the-response-data-in-json">
-   Store the response data in JSON
+  <a class="reference internal nav-link" href="#store-the-api-response-data-in-json">
+   Store the API response data in JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -400,13 +390,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pull-additional-details-about-the-repositories-and-store-in-a-variable">
-   Pull additional details about the repositories and store in a variable
+  <a class="reference internal nav-link" href="#capture-additional-details-about-the-repositories">
+   Capture additional details about the repositories
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examine-the-data-in-the-top-repository">
-   Examine the data in the top repository
+  <a class="reference internal nav-link" href="#examine-the-data-in-the-top-stars-repository">
+   Examine the data in the top (stars) repository
   </a>
  </li>
 </ul>
@@ -419,19 +409,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="repository-statistics">
-<h1>Repository Statistics<a class="headerlink" href="#repository-statistics" title="Permalink to this headline">#</a></h1>
-<section id="make-an-api-call">
-<h2>Make an API call<a class="headerlink" href="#make-an-api-call" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="store-the-response-data-in-json">
-<h2>Store the response data in JSON<a class="headerlink" href="#store-the-response-data-in-json" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="repository-statistics">
+<span id="file-types-notebooks"></span><h1>Repository Statistics<a class="headerlink" href="#repository-statistics" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
-
-url = &#39;https://api.github.com/search/repositories?q=tetris+language:python&amp;sort=stars&amp;order=desc&#39;
-r = requests.get(url)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="store-the-api-response-data-in-json">
+<h2>Store the API response data in JSON<a class="headerlink" href="#store-the-api-response-data-in-json" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>url = &#39;https://api.github.com/search/repositories?q=tetris+language:python&amp;sort=stars&amp;order=desc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r = requests.get(url)
 
 print(&quot;\nStatus code:&quot;, r.status_code)
 
@@ -455,14 +453,14 @@ respons_dict = r.json()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total repositories: 5859
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total repositories: 5860
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="pull-additional-details-about-the-repositories-and-store-in-a-variable">
-<h2>Pull additional details about the repositories and store in a variable<a class="headerlink" href="#pull-additional-details-about-the-repositories-and-store-in-a-variable" title="Permalink to this headline">#</a></h2>
+<section id="capture-additional-details-about-the-repositories">
+<h2>Capture additional details about the repositories<a class="headerlink" href="#capture-additional-details-about-the-repositories" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dicts = respons_dict[&#39;items&#39;]
@@ -477,8 +475,8 @@ print(&quot;\nItems returned:&quot;, len(repos_dicts))
 </div>
 </div>
 </section>
-<section id="examine-the-data-in-the-top-repository">
-<h2>Examine the data in the top repository<a class="headerlink" href="#examine-the-data-in-the-top-repository" title="Permalink to this headline">#</a></h2>
+<section id="examine-the-data-in-the-top-stars-repository">
+<h2>Examine the data in the top (stars) repository<a class="headerlink" href="#examine-the-data-in-the-top-stars-repository" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dict = repos_dicts[0]
