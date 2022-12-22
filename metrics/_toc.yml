@@ -8,3 +8,15 @@ chapters:
 - file: notebooks
 - file: markdown-notebooks
 - file: repo-metrics
+
+
+parts:
+  - caption: Repository Data
+    chapters:
+    - file: repo-metrics
+    - file: path/to/part1/chapter2
+  - caption: How to manage site contents
+    chapters:
+    - file: markdown
+    - file: notebooks
+    - file: markdown-notebooks
