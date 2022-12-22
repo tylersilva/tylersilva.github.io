@@ -4,10 +4,10 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Repository Data
+  - caption: Data
     chapters:
     - file: repo-metrics
-    - file: path/to/part1/chapter2
+    - file: visualization
   - caption: How to manage site contents
     chapters:
     - file: markdown
