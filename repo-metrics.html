@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Repository Metrics &#8212; metrics</title>
+    <title>Repository Statistics &#8212; metrics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -130,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Repository Metrics
+   Repository Statistics
   </a>
  </li>
 </ul>
@@ -184,6 +184,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/tylersilva/metrics/main?urlpath=tree/docs/repo-metrics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -251,7 +280,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/repo-metrics.md"
+        <a href="_sources/repo-metrics.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -262,7 +291,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -316,8 +345,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#print-total-respositories-found">
-   Print total respositories found
+  <a class="reference internal nav-link" href="#print-total-repositories-found">
+   Print total repositories found
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -339,7 +368,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Repository Metrics</h1>
+                <h1>Repository Statistics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -355,8 +384,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#print-total-respositories-found">
-   Print total respositories found
+  <a class="reference internal nav-link" href="#print-total-repositories-found">
+   Print total repositories found
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -379,20 +408,90 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="repository-metrics">
-<h1>Repository Metrics<a class="headerlink" href="#repository-metrics" title="Permalink to this headline">#</a></h1>
-<p>This page shows off respoitory metrics for custom queries against GitHub’s REST API.</p>
+  <section id="repository-statistics">
+<h1>Repository Statistics<a class="headerlink" href="#repository-statistics" title="Permalink to this headline">#</a></h1>
 <section id="make-an-api-call-and-store-the-response-data-in-json">
 <h2>Make an API call and store the response data in JSON<a class="headerlink" href="#make-an-api-call-and-store-the-response-data-in-json" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import requests
+
+url = &#39;https://api.github.com/search/repositories?q=tetris+language:python&amp;sort=stars&amp;order=desc&#39;
+r = requests.get(url)
+
+print(&quot;\nStatus code:&quot;, r.status_code)
+
+respons_dict = r.json()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status code: 200
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="print-total-respositories-found">
-<h2>Print total respositories found<a class="headerlink" href="#print-total-respositories-found" title="Permalink to this headline">#</a></h2>
+<section id="print-total-repositories-found">
+<h2>Print total repositories found<a class="headerlink" href="#print-total-repositories-found" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;\nTotal repositories:&quot;, respons_dict[&#39;total_count&#39;])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total repositories: 5858
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="pull-additional-details-about-the-repositories-and-store-in-a-variable">
 <h2>Pull additional details about the repositories and store in a variable<a class="headerlink" href="#pull-additional-details-about-the-repositories-and-store-in-a-variable" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dicts = respons_dict[&#39;items&#39;]
+print(&quot;\nItems returned:&quot;, len(repos_dicts))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Items returned: 30
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="examine-the-data-in-the-top-repository">
 <h2>Examine the data in the top repository<a class="headerlink" href="#examine-the-data-in-the-top-repository" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dict = repos_dicts[0]
+print(&quot;\nInformation regarding the top repository:&quot;)
+print(&#39;Name:&#39;, repos_dict[&#39;name&#39;])  #print the name of the project
+print(&#39;Description:&#39;, repos_dict[&#39;description&#39;]) #print the repository’s description
+print(&#39;Owner:&#39;, repos_dict[&#39;owner&#39;][&#39;login&#39;])  #use the key owner and the the key login to access the dictionary representing the owner and the owner’s login name respectively.
+print(&#39;Stars:&#39;, repos_dict[&#39;stargazers_count&#39;])  #print how many stars the project has earned
+print(&#39;Repository:&#39;, repos_dict[&#39;html_url&#39;])  #print URL for the project’s GitHub repository
+print(&#39;Created:&#39;, repos_dict[&#39;created_at&#39;])  #print when it was created
+print(&#39;Updated:&#39;, repos_dict[&#39;updated_at&#39;])  #show when it was last updated
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Information regarding the top repository:
+Name: tetris_game
+Description: A Tetris Game with AI
+Owner: LoveDaisy
+Stars: 644
+Repository: https://github.com/LoveDaisy/tetris_game
+Created: 2017-07-05T03:18:58Z
+Updated: 2022-12-14T06:11:25Z
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
