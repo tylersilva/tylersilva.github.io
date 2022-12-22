@@ -38,4 +38,4 @@ html:
 
 # Launch button settings
 launch_buttons:
-  binderhub_url: ""
+  binderhub_url: "https://jupyterbook.org/"
