@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: repo-metrics
     - file: visualization
+    - file: properties
   - caption: How to manage site contents
     chapters:
     - file: markdown
