@@ -433,7 +433,7 @@ title="Print to PDF"
 
 print(&quot;\nStatus code:&quot;, r.status_code)
 
-respons_dict = r.json()
+r_dict = r.json()
 </pre></div>
 </div>
 </div>
@@ -448,12 +448,12 @@ respons_dict = r.json()
 <h2>Print total repositories found<a class="headerlink" href="#print-total-repositories-found" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;\nTotal repositories:&quot;, respons_dict[&#39;total_count&#39;])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;\nTotal repositories:&quot;, r_dict[&#39;total_count&#39;])
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total repositories: 5860
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total repositories: 5865
 </pre></div>
 </div>
 </div>
@@ -463,8 +463,8 @@ respons_dict = r.json()
 <h2>Capture additional details about the repositories<a class="headerlink" href="#capture-additional-details-about-the-repositories" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dicts = respons_dict[&#39;items&#39;]
-print(&quot;\nItems returned:&quot;, len(repos_dicts))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos = r_dict[&#39;items&#39;]
+print(&quot;\nItems returned:&quot;, len(repos))
 </pre></div>
 </div>
 </div>
@@ -479,15 +479,15 @@ print(&quot;\nItems returned:&quot;, len(repos_dicts))
 <h2>Examine the data in the top (stars) repository<a class="headerlink" href="#examine-the-data-in-the-top-stars-repository" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repos_dict = repos_dicts[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repo = repos[0]
 print(&quot;\nInformation regarding the top repository:&quot;)
-print(&#39;Name:&#39;, repos_dict[&#39;name&#39;])  #print the name of the project
-print(&#39;Description:&#39;, repos_dict[&#39;description&#39;]) #print the repository’s description
-print(&#39;Owner:&#39;, repos_dict[&#39;owner&#39;][&#39;login&#39;])  #use the key owner and the the key login to access the dictionary representing the owner and the owner’s login name respectively.
-print(&#39;Stars:&#39;, repos_dict[&#39;stargazers_count&#39;])  #print how many stars the project has earned
-print(&#39;Repository:&#39;, repos_dict[&#39;html_url&#39;])  #print URL for the project’s GitHub repository
-print(&#39;Created:&#39;, repos_dict[&#39;created_at&#39;])  #print when it was created
-print(&#39;Updated:&#39;, repos_dict[&#39;updated_at&#39;])  #show when it was last updated
+print(&#39;Name:&#39;, repo[&#39;name&#39;])  #print the name of the project
+print(&#39;Description:&#39;, repo[&#39;description&#39;]) #print the repository’s description
+print(&#39;Owner:&#39;, repo[&#39;owner&#39;][&#39;login&#39;])  #use the key owner and the the key login to access the dictionary representing the owner and the owner’s login name respectively.
+print(&#39;Stars:&#39;, repo[&#39;stargazers_count&#39;])  #print how many stars the project has earned
+print(&#39;Repository:&#39;, repo[&#39;html_url&#39;])  #print URL for the project’s GitHub repository
+print(&#39;Created:&#39;, repo[&#39;created_at&#39;])  #print when it was created
+print(&#39;Updated:&#39;, repo[&#39;updated_at&#39;])  #show when it was last updated
 </pre></div>
 </div>
 </div>
