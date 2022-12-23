@@ -427,7 +427,11 @@ title="Print to PDF"
 <h2>Store the API response data in JSON<a class="headerlink" href="#store-the-api-response-data-in-json" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>url = &#39;https://api.github.com/search/repositories?q=tetris+language:python&amp;sort=stars&amp;order=desc&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>search_query = &quot;tetris&quot;
+language = &quot;python&quot;
+criteria = &quot;stars&quot;
+
+url = (f&#39;https://api.github.com/search/repositories?q={search_query}+language:{language}&amp;sort={criteria}&amp;order=desc&#39;)
 </pre></div>
 </div>
 </div>
