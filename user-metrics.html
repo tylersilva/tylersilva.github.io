@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebooks with MyST Markdown &#8212; GitHub Metrics</title>
+    <title>User Statistics &#8212; GitHub Metrics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   How to manage site contents
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="markdown.html">
    Markdown Files
@@ -151,8 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
    Content with notebooks
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
    Notebooks with MyST Markdown
   </a>
  </li>
@@ -257,7 +256,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/tylersilva/metrics/issues/new?title=Issue%20on%20page%20%2Fmarkdown-notebooks.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/tylersilva/metrics/issues/new?title=Issue%20on%20page%20%2Fuser-metrics.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -285,24 +284,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/markdown-notebooks.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="_sources/markdown-notebooks.md"
+        <a href="_sources/user-metrics.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,7 +295,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -362,18 +344,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-cell">
-   An example cell
+  <a class="reference internal nav-link" href="#store-the-api-response-data-in-json">
+   Store the API response data in JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">
-   Create a notebook with MyST Markdown
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">
-   Quickly add YAML metadata for MyST Notebooks
+  <a class="reference internal nav-link" href="#capture-and-display-the-top-user-data">
+   Capture and display the top user data
   </a>
  </li>
 </ul>
@@ -385,7 +362,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Notebooks with MyST Markdown</h1>
+                <h1>User Statistics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -396,18 +373,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-cell">
-   An example cell
+  <a class="reference internal nav-link" href="#store-the-api-response-data-in-json">
+   Store the API response data in JSON
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">
-   Create a notebook with MyST Markdown
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">
-   Quickly add YAML metadata for MyST Notebooks
+  <a class="reference internal nav-link" href="#capture-and-display-the-top-user-data">
+   Capture and display the top user data
   </a>
  </li>
 </ul>
@@ -420,49 +392,193 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this headline">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this headline">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="user-statistics">
+<h1>User Statistics<a class="headerlink" href="#user-statistics" title="Permalink to this headline">#</a></h1>
+<section id="store-the-api-response-data-in-json">
+<h2>Store the API response data in JSON<a class="headerlink" href="#store-the-api-response-data-in-json" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">org</span> <span class="o">=</span> <span class="s2">&quot;microsoft&quot;</span>
+<span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;vscode&quot;</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://api.github.com/repos/</span><span class="si">{</span><span class="n">org</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s1">/commits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection Error&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">Timeout</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Timeout Error&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;General Error&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Status code:&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="n">r_dict</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status code: 200
 </pre></div>
 </div>
 </div>
 </div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
 </section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this headline">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this headline">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+<section id="capture-and-display-the-top-user-data">
+<h2>Capture and display the top user data<a class="headerlink" href="#capture-and-display-the-top-user-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dev_commits</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">total_commits</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_dict</span><span class="p">:</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;commit&#39;</span><span class="p">][</span><span class="s1">&#39;author&#39;</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+
+    <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
+    <span class="n">dev_commits</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">dev_commits</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">json_commits</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">dev_commits</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top developer commits on this project (</span><span class="si">{</span><span class="n">org</span><span class="si">}</span><span class="s2">\</span><span class="si">{</span><span class="n">project</span><span class="si">}</span><span class="s2">): </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">json_commits</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">:</span>
+    <span class="n">total_commits</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total commits: &#39;</span><span class="p">,</span> <span class="n">total_commits</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top developer commits on this project (microsoft\vscode): 
+ {
+    &quot;Daniel Imms&quot;: 6,
+    &quot;Sandeep Somavarapu&quot;: 4,
+    &quot;Benjamin Pasero&quot;: 4,
+    &quot;Matt Bierner&quot;: 3,
+    &quot;Megan Rogge&quot;: 2,
+    &quot;Alex Ross&quot;: 2,
+    &quot;Johannes&quot;: 2,
+    &quot;Connor Peet&quot;: 2,
+    &quot;Peng Lyu&quot;: 1,
+    &quot;Martin Aeschlimann&quot;: 1,
+    &quot;Han&quot;: 1,
+    &quot;Andrea Mah&quot;: 1,
+    &quot;Johannes Rieken&quot;: 1
+}
+Total commits:  30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a dataframe with the captured data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dev_commits</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Developers&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Developers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Matt Bierner</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Daniel Imms</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Peng Lyu</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Martin Aeschlimann</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Han</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Sandeep Somavarapu</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Benjamin Pasero</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Andrea Mah</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Megan Rogge</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Johannes Rieken</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Alex Ross</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Johannes</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Connor Peet</th>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -494,13 +610,6 @@ See the YAML at the top of this page for example.</p></li>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Content with notebooks</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
