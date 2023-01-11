@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: repo-metrics
     - file: user-metrics
+    - file: contributors
     - file: visualization
     - file: properties
   - caption: How to manage site contents
