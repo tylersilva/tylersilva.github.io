@@ -11,7 +11,7 @@ parts:
     - file: contributors
     - file: visualization
     - file: properties
-    - file: markmap
+    - file: markmap.html
   - caption: How to manage site contents
     chapters:
     - file: markdown
