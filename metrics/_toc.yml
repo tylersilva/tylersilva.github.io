@@ -14,7 +14,7 @@ parts:
     - file: properties
   - caption: Markmaps
     chapters:
-    - file: markmap
+    - file: markmaps/markmap
   - caption: How to manage site contents
     chapters:
     - file: markdown
