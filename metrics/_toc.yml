@@ -12,9 +12,6 @@ parts:
     - file: visualization
     - file: widgets-test
     - file: properties
-  - caption: Markmaps
-    chapters:
-    - file: markmaps/markmap.html
   - caption: How to manage site contents
     chapters:
     - file: markdown
